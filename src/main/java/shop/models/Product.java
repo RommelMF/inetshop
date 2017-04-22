@@ -20,7 +20,7 @@ public interface Product {
      void setCost(double cost);
 
      long getQuantity();
-     void setQuantity();
+     void setQuantity(long quantity);
 
      Map<String, String> getMapCharacters();
      void setMapCharacters(Map<String, String> map);

@@ -15,5 +15,7 @@ public interface DAOProductRepository {
 
     Product findProductById(long id);
 
+    void updateProduct(Product product);
+
     List<Product> findProductsList();
 }

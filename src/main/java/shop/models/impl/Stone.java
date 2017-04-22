@@ -33,7 +33,10 @@ public class Stone implements Product {
     @Column(name = "quantity")
     private long quantity;
 
-    @OneToMany(mappedBy = "stones", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @ElementCollection(fetch = FetchType.LAZY)
+    @MapKeyColumn(name = "name", length = 100)
+    @Column(name = "value", length = 255)
+    @CollectionTable(name = "stone_attributes", joinColumns = @JoinColumn(name = "stones_id"))
     private Map<String, String> mapCharacters;
 
     @Override
@@ -52,7 +55,7 @@ public class Stone implements Product {
     }
 
     @Override
-    public void setQuantity() {
+    public void setQuantity(long quantity) {
         this.quantity = quantity;
     }
 
