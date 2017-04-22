@@ -15,5 +15,5 @@
         <property name="prefix" value="/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-    <context:component-scan base-package="shop"/>
+    <context:component-scan base-package="shop.controllers"/>
 </beans>
