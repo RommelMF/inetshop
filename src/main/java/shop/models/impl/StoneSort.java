@@ -12,7 +12,7 @@ import java.util.Map;
 @Entity
 @Table(name = "stones")
 @SequenceGenerator(sequenceName = "stone_seq", name = "stoneSequence" )
-public class Stone implements Product {
+public class StoneSort implements Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "stoneSequence")
