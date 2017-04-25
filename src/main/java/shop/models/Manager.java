@@ -1,5 +1,9 @@
 package shop.models;
 
+import shop.models.impl.StoneSort;
+
+import java.util.List;
+
 public interface Manager {
 
 	/*
@@ -22,7 +26,7 @@ public interface Manager {
 	/*
 	* return StoneSort by this ID
 	*/
-	StoneSort getById(long id)
+	StoneSort getById(long id);
 	
 	
 	/*
