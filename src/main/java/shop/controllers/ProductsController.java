@@ -41,6 +41,6 @@ public class ProductsController {
 
         return modelAndView;
     }
-//    TODO create to check-product.jsp, append fields in admin.jsp
+//    TODO append fields(characteristics) in admin.jsp
 
 }
