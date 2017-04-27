@@ -18,8 +18,19 @@
     </div>
     <div class="form-group">
         <form:label for="exampleInputQuantity" path="quantity">The quantity of goods</form:label>
-        <form:input type="long" class="form-control" id="exampleInputQuantity" placeholder="he quantity of goods" path="quantity"/>
+        <form:input type="long" class="form-control" id="exampleInputQuantity" placeholder="the quantity of goods" path="quantity"/>
     </div>
+    <div class="form-group">
+        <form:label for="exampleInputCost" path="cost">The cost of product</form:label>
+        <form:input type="double" class="form-control" id="exampleInputCost" placeholder="The cost of product" path="cost"/>
+    </div>
+   <div class="form-group">
+       <c:forEach items="${stone.mapCharacters}" var="item">
+           <label>${item.key}</label>
+           <input type="text" name="nameMap['${item.key}']" value="${item.value}">
+           <br>
+       </c:forEach>
+   </div>
     <button type="submit" class="btn btn-default" value="stone">Send</button>
 </form:form>
 
