@@ -24,13 +24,14 @@
         <form:label for="exampleInputCost" path="cost">The cost of product</form:label>
         <form:input type="double" class="form-control" id="exampleInputCost" placeholder="The cost of product" path="cost"/>
     </div>
-   <div class="form-group">
-       <c:forEach items="${stone.mapCharacters}" var="item">
-           <label>${item.key}</label>
-           <input type="text" name="nameMap['${item.key}']" value="${item.value}">
-           <br>
-       </c:forEach>
-   </div>
+    <div class="form-group">
+    <c:forEach items="${stone.mapCharacters}" var="item">
+        <label>${item.key}</label>
+        <input type="text" name="mapCharacters['${item.key}']" value="${item.value}"/>
+        <br>
+    </c:forEach>
+        </div>
+
     <button type="submit" class="btn btn-default" value="stone">Send</button>
 </form:form>
 

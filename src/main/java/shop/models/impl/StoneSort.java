@@ -39,6 +39,13 @@ public class StoneSort implements Product {
     @CollectionTable(name = "stone_attributes", joinColumns = @JoinColumn(name = "stones_id"))
     private Map<String, String> mapCharacters;
 
+    public StoneSort() {
+    }
+    public StoneSort(Map<String,String> map) {
+        this.mapCharacters = map;
+    }
+
+
     @Override
     public double getCost() {
         return cost;

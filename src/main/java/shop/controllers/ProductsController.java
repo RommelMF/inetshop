@@ -7,12 +7,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import shop.models.impl.StoneSort;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by Home on 20.04.2017.
  */
 @Controller
 @RequestMapping(value = "/inetshop")
 public class ProductsController {
+
+    private Map<String, String> map = new HashMap<>();
+    {
+        map.put("Anonim","Anonimov");
+    }
 
     @RequestMapping(value = "/",method = RequestMethod.GET)
     public String index() {
@@ -25,7 +33,7 @@ public class ProductsController {
      */
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public ModelAndView mainAdmin() {
-        return new ModelAndView("admin","stone",new StoneSort());
+        return new ModelAndView("admin","stone",new StoneSort(map));
     }
 
     /**
