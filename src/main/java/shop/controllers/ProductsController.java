@@ -1,13 +1,17 @@
 package shop.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import shop.models.Product;
 import shop.models.impl.StoneSort;
+import shop.services.ProductService;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,9 +21,14 @@ import java.util.Map;
 @RequestMapping(value = "/inetshop")
 public class ProductsController {
 
+    @Autowired
+    private ProductService prService;
+
     private Map<String, String> map = new HashMap<>();
     {
-        map.put("Anonim","Anonimov");
+        map.put("Size","30x25x70");
+        map.put("Colour","red");
+        map.put("Composition", "gravel");
     }
 
     @RequestMapping(value = "/",method = RequestMethod.GET)
@@ -42,13 +51,13 @@ public class ProductsController {
      */
     @RequestMapping(value = "/check-product", method = RequestMethod.POST)
     public ModelAndView checkProduct(@ModelAttribute("stone") StoneSort stone) {
+        prService.saveProduct(stone);
+        List<Product> list = prService.findAllProducts();
         ModelAndView modelAndView = new ModelAndView();
-
         modelAndView.setViewName("check-product");
-        modelAndView.addObject("stone", stone);
+        modelAndView.addObject("list", list);
 
         return modelAndView;
     }
-//    TODO append fields(characteristics) in admin.jsp
 
 }

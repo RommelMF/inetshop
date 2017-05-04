@@ -1,8 +1,11 @@
-package shop.repository;
+package shop.repository.impl;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import shop.models.Product;
+import shop.models.impl.StoneSort;
+import shop.repository.DAOProductRepository;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -42,7 +45,7 @@ public class ProductRepositoryImpl implements DAOProductRepository {
 
     @Override
     public List<Product> findProductsList() {
-        TypedQuery<Product> query = em.createQuery("SELECT product FROM Product product ", Product.class);
+        TypedQuery<Product> query = em.createQuery("SELECT stone FROM StoneSort stone ", Product.class);
         return query.getResultList();
     }
 }

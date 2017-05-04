@@ -3,11 +3,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Admin</title>
 </head>
 <body>
-<p>Password: ${stone.name}</p>
-<p>Title: ${stone.title}</p>
-<p>Quantity: ${stone.quantity}</p>
+<c:forEach var="item" items="${list}" varStatus="status">
+    <p>Product name: <c:out value="${status.index}"/> = <c:out value="${item.name}"/></p>
+    <p>Title:    <c:out value="${item.title}"/></p>
+    <p>Quantity: <c:out value="${item.quantity}"/></p>
+    <br>
+</c:forEach>
 </body>
 </html>
