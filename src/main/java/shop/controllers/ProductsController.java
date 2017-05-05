@@ -40,24 +40,32 @@ public class ProductsController {
      * This is a method for add to product
      * @return object ModelAndView
      */
-    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/add-product", method = RequestMethod.GET)
     public ModelAndView mainAdmin() {
-        return new ModelAndView("admin","stone",new StoneSort(map));
+        return new ModelAndView("add-product","stone",new StoneSort(map));
     }
 
     /**
      * This is a test method for check connection
      * @return object ModelAndView
      */
-    @RequestMapping(value = "/check-product", method = RequestMethod.POST)
-    public ModelAndView checkProduct(@ModelAttribute("stone") StoneSort stone) {
-        prService.saveProduct(stone);
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public ModelAndView checkProduct() {
         List<Product> list = prService.findAllProducts();
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("check-product");
+        modelAndView.setViewName("admin");
         modelAndView.addObject("list", list);
 
         return modelAndView;
     }
-
+    @RequestMapping(value = "/admin/save-product/result", method = RequestMethod.POST)
+    public ModelAndView saveProduct(@ModelAttribute("stone") StoneSort sort) {
+        boolean result = prService.saveProduct(sort);
+        String message = null;
+        if(result) {
+            message = "Product added";
+            return new ModelAndView("result","test",message);
+        } else
+        return new ModelAndView("result","test",message);
+    }
 }
