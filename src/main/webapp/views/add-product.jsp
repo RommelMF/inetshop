@@ -8,22 +8,22 @@
 </head>
 <body>
 
-<form:form class="form-inline" method="POST" commandName="stone" action="admin/save-product/result">
+<form:form class="form-inline" method="POST" commandName="stone" action="/inetshop/admin/add-product/result">
     <div class="form-group">
         <form:label for="exampleInputName" path="name">Name Product</form:label>
         <form:input type="text" class="form-control" id="exampleInputName" placeholder="Botinki" path="name"/>
     </div>
     <div class="form-group">
         <form:label for="exampleInputTitle" path="title">Product description</form:label>
-        <form:input type="text" class="form-control" id="exampleInputTitle" placeholder="product description" path="title"/>
+        <form:input type="text" class="form-control" id="exampleInputTitle" placeholder="stoneSort description" path="title"/>
     </div>
     <div class="form-group">
         <form:label for="exampleInputQuantity" path="quantity">The quantity of goods</form:label>
         <form:input type="long" class="form-control" id="exampleInputQuantity" placeholder="the quantity of goods" path="quantity"/>
     </div>
     <div class="form-group">
-        <form:label for="exampleInputCost" path="cost">The cost of product</form:label>
-        <form:input type="double" class="form-control" id="exampleInputCost" placeholder="The cost of product" path="cost"/>
+        <form:label for="exampleInputCost" path="cost">The cost of stoneSort</form:label>
+        <form:input type="double" class="form-control" id="exampleInputCost" placeholder="The cost of stoneSort" path="cost"/>
     </div>
     <div class="form-group">
     <c:forEach items="${stone.mapCharacters}" var="item">

@@ -21,26 +21,26 @@ public class ProductRepositoryImpl implements DAOProductRepository {
     EntityManager em;
 
     @Override
-    public boolean addProduct(Product product) {
-        em.persist(product);
+    public boolean addProduct(Product stoneSort) {
+        em.persist(stoneSort);
         return true;
     }
 
     @Override
     public boolean deleteProduct(long id) {
-        em.remove(em.find(Product.class,id));
+        em.remove(em.find(StoneSort.class,id));
         return true;
     }
 
     @Override
     public Product findProductById(long id) {
-        Product product = em.find(Product.class,id);
-        return product;
+        Product stoneSort = em.find(StoneSort.class,id);
+        return stoneSort;
     }
 
     @Override
-    public void updateProduct(Product product) {
-        em.merge(product);
+    public void updateProduct(Product stoneSort) {
+        em.merge(stoneSort);
     }
 
     @Override

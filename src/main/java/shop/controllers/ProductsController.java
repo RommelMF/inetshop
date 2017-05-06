@@ -3,6 +3,7 @@ package shop.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -58,14 +59,37 @@ public class ProductsController {
 
         return modelAndView;
     }
-    @RequestMapping(value = "/admin/save-product/result", method = RequestMethod.POST)
+    @RequestMapping(value = "/admin/add-product/result", method = RequestMethod.POST)
     public ModelAndView saveProduct(@ModelAttribute("stone") StoneSort sort) {
         boolean result = prService.saveProduct(sort);
         String message = null;
         if(result) {
             message = "Product added";
-            return new ModelAndView("result","test",message);
-        } else
+        }
+        return new ModelAndView("result","test",message);
+    }
+
+    @RequestMapping(value = "/admin/{id}/delete",method = RequestMethod.GET)
+    public ModelAndView deleteProduct(@PathVariable("id") long id) {
+       boolean result = prService.deleteProduct(id);
+        String message = null;
+        if(result) {
+            message = "Product is removed";
+        }
+        return new ModelAndView("result","test",message);
+    }
+    @RequestMapping(value = "/admin/{id}/edit", method = RequestMethod.GET)
+    public ModelAndView editProduct(@PathVariable("id")long id) {
+        Product stoneSort = prService.findProductById(id);
+        return new ModelAndView("edit-product","stone", stoneSort);
+    }
+    @RequestMapping(value = "/admin/save-product", method = RequestMethod.POST)
+    public ModelAndView updateProduct(@ModelAttribute("stone") StoneSort stone) {
+        boolean result = prService.updateProduct(stone);
+        String message = null;
+        if(result) {
+            message = "Product is update";
+        }
         return new ModelAndView("result","test",message);
     }
 }

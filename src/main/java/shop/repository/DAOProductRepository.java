@@ -10,11 +10,11 @@ import java.util.List;
 public interface DAOProductRepository {
 
     /**
-     * method to add product
-     * @param product
-     * @return boolean (if product add - true, else - false)
+     * method to add stoneSort
+     * @param stoneSort
+     * @return boolean (if stoneSort add - true, else - false)
      */
-    boolean addProduct(Product product);
+    boolean addProduct(Product stoneSort);
 
     /**
      * method remove product by ID
@@ -31,10 +31,10 @@ public interface DAOProductRepository {
     Product findProductById(long id);
 
     /**
-     * method update product
-     * @param product
+     * method update stoneSort
+     * @param stoneSort
      */
-    void updateProduct(Product product);
+    void updateProduct(Product stoneSort);
 
     /**
      * method find list of products

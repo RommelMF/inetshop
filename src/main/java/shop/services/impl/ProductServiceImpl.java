@@ -20,8 +20,8 @@ public class ProductServiceImpl implements ProductService {
     private DAOProductRepository repository;
 
     @Override
-    public boolean saveProduct(Product product) {
-        repository.addProduct(product);
+    public boolean saveProduct(Product stoneSort) {
+        repository.addProduct(stoneSort);
         return true;
     }
 
@@ -32,8 +32,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public boolean updateProduct(Product product) {
-        repository.updateProduct(product);
+    public boolean updateProduct(Product stoneSort) {
+        repository.updateProduct(stoneSort);
         return true;
     }
 

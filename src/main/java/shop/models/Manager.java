@@ -19,18 +19,18 @@ public interface Manager {
 	void changeQuantity(int counter, StoneSort id);
 	
 	/*
-	* return StoneSort by this name
+	* return Product by this name
 	*/
 	StoneSort getByName(String name);
 	
 	/*
-	* return StoneSort by this ID
+	* return Product by this ID
 	*/
 	StoneSort getById(long id);
 	
 	
 	/*
-	* adding new StoneSort
+	* adding new Product
 	*/
 	void setStoneSort(StoneSort instance);
 	

@@ -4,12 +4,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Result</title>
 </head>
 <body>
 <div>
     <c:if test="${test != null}">
-        <p>Product added!</p>
+        <p>${test}</p>
         <a href="/inetshop/admin/add-product">To add another product</a>
         <a href="/inetshop/admin">Return to main page</a>
     </c:if>

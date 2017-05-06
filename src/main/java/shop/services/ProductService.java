@@ -9,11 +9,11 @@ import java.util.List;
  */
 public interface ProductService {
 
-    boolean saveProduct(Product product);
+    boolean saveProduct(Product stoneSort);
 
     boolean deleteProduct(long id);
 
-    boolean updateProduct(Product product);
+    boolean updateProduct(Product stoneSort);
 
     Product findProductById(long id);
 

@@ -33,7 +33,7 @@ public class StoneSort implements Product {
     @Column(name = "quantity")
     private long quantity;
 
-    @ElementCollection(fetch = FetchType.LAZY)
+    @ElementCollection(fetch = FetchType.EAGER)
     @MapKeyColumn(name = "name", length = 100)
     @Column(name = "value", length = 255)
     @CollectionTable(name = "stone_attributes", joinColumns = @JoinColumn(name = "stones_id"))
