@@ -27,13 +27,13 @@ public class ProductRepositoryImpl implements DAOProductRepository {
     }
 
     @Override
-    public boolean deleteProduct(long id) {
+    public boolean deleteProduct(Long id) {
         em.remove(em.find(StoneSort.class,id));
         return true;
     }
 
     @Override
-    public Product findProductById(long id) {
+    public Product findProductById(Long id) {
         Product stoneSort = em.find(StoneSort.class,id);
         return stoneSort;
     }

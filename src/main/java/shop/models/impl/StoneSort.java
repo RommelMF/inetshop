@@ -17,7 +17,7 @@ public class StoneSort implements Product {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "stoneSequence")
     @Column(name = "id")
-    private long id;
+    private Long id;
 
     @Length(min = 3, max = 50)
     @Column(name = "name")
@@ -36,7 +36,7 @@ public class StoneSort implements Product {
     @ElementCollection(fetch = FetchType.EAGER)
     @MapKeyColumn(name = "name", length = 100)
     @Column(name = "value", length = 255)
-    @CollectionTable(name = "stone_attributes", joinColumns = @JoinColumn(name = "stones_id"))
+    @CollectionTable( name = "stone_attributes", joinColumns = @JoinColumn(name = "stones_id"))
     private Map<String, String> mapCharacters;
 
     public StoneSort() {
@@ -67,12 +67,12 @@ public class StoneSort implements Product {
     }
 
     @Override
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
     @Override
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

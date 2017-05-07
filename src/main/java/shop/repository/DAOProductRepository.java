@@ -21,14 +21,14 @@ public interface DAOProductRepository {
      * @param id
      * @return boolean
      */
-    boolean deleteProduct(long id);
+    boolean deleteProduct(Long id);
 
     /**
      * method find product by ID
      * @param id
      * @return product
      */
-    Product findProductById(long id);
+    Product findProductById(Long id);
 
     /**
      * method update stoneSort

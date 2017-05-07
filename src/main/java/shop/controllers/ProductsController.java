@@ -70,7 +70,7 @@ public class ProductsController {
     }
 
     @RequestMapping(value = "/admin/{id}/delete",method = RequestMethod.GET)
-    public ModelAndView deleteProduct(@PathVariable("id") long id) {
+    public ModelAndView deleteProduct(@PathVariable("id") Long id) {
        boolean result = prService.deleteProduct(id);
         String message = null;
         if(result) {
@@ -79,7 +79,7 @@ public class ProductsController {
         return new ModelAndView("result","test",message);
     }
     @RequestMapping(value = "/admin/{id}/edit", method = RequestMethod.GET)
-    public ModelAndView editProduct(@PathVariable("id")long id) {
+    public ModelAndView editProduct(@PathVariable("id")Long id) {
         Product stoneSort = prService.findProductById(id);
         return new ModelAndView("edit-product","stone", stoneSort);
     }

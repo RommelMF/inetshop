@@ -7,8 +7,8 @@ import java.util.Map;
  */
 public interface Product {
 
-     long getId();
-     void setId(long id);
+     Long getId();
+     void setId(Long id);
 
      String getName();
      void setName(String name);

@@ -26,7 +26,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public boolean deleteProduct(long id) {
+    public boolean deleteProduct(Long id) {
         repository.deleteProduct(id);
         return true;
     }
@@ -38,7 +38,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product findProductById(long id) {
+    public Product findProductById(Long id) {
        return repository.findProductById(id);
     }
 
